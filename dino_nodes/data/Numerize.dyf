@@ -1,0 +1,38 @@
+<Workspace Version="1.3.4.6666" X="-2120.04253764049" Y="-1763.60304518042" zoom="4" ScaleFactor="1" Name="Numerize" Description="Generates series of numbers" ID="a88f0291-a6b0-436d-9370-9f56696e1e8c" Category="Dino.Data">
+  <NamespaceResolutionMap />
+  <Elements>
+    <PythonNodeModels.PythonNode guid="a35699d8-ef1a-49dd-b855-ad4a8918d671" type="PythonNodeModels.PythonNode" nickname="Python Script" x="647.2" y="482.4" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" inputcount="1">
+      <PortInfo index="0" default="False" />
+      <Script>import clr
+import sys
+
+sys.path.append('C:/ProgramData/Dynamo/Dynamo Revit/1.3/definitions/dino/')
+
+from dino_core import numerize
+
+#The inputs to this node will be stored as a list in the IN variables.
+data = UnwrapElement(IN[0])
+
+#Assign your output to the OUT variable.
+OUT = numerize(data)
+      </Script>
+    </PythonNodeModels.PythonNode>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="0ee213b9-3a43-40d4-9ae0-90d287241343" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="437.520568589537" y="475.521033242585" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="data: var[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="e0af44d1-dc60-4c04-bec2-07a53cff5b34" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="890.678025462907" y="503.138354648601" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <Symbol value="data: var[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="a35699d8-ef1a-49dd-b855-ad4a8918d671" start_index="0" end="e0af44d1-dc60-4c04-bec2-07a53cff5b34" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="0ee213b9-3a43-40d4-9ae0-90d287241343" start_index="0" end="a35699d8-ef1a-49dd-b855-ad4a8918d671" end_index="0" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

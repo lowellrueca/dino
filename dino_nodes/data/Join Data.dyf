@@ -1,0 +1,53 @@
+<Workspace Version="1.3.4.6666" X="-628.928043819539" Y="-211.061604285479" zoom="1.92101320430153" ScaleFactor="1" Name="Join Data" Description="Concatenates the two sets of data" ID="fa04762a-84ad-4aa0-84ee-dd11370f416f" Category="Dino.Data">
+  <NamespaceResolutionMap>
+    <ClassMap partialName="List" resolvedName="DSCore.List" assemblyName="DSCoreNodes.dll" />
+  </NamespaceResolutionMap>
+  <Elements>
+    <PythonNodeModels.PythonNode guid="242bff70-47bd-44e8-8278-cc777a14ff74" type="PythonNodeModels.PythonNode" nickname="Python Script" x="691.707273933536" y="286.117180210284" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" inputcount="3">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <Script>import clr
+import sys
+
+sys.path.append('C:/ProgramData/Dynamo/Dynamo Revit/1.3/definitions/dino/')
+
+
+from dino_core import join_data
+
+#The inputs to this node will be stored as a list in the IN variables.
+input1 = UnwrapElement(IN[0])
+input2 = UnwrapElement(IN[1])
+input3 = UnwrapElement(IN[2])
+
+#Assign your output to the OUT variable.
+OUT = join_data(input1, input2, input3)
+      </Script>
+    </PythonNodeModels.PythonNode>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="615fe430-e663-4597-a82c-c4cc2a0c08e6" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="436.444578566421" y="259.24163622112" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="data1: var[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="22e17d4f-71b1-4550-84ed-7eb661d89e0b" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="451.13304664445" y="329.98609471938" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="data2: var[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="2b3b0cd2-fd8e-499d-a34e-3b17d3ba8003" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="439.442225112958" y="395.334789433875" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="separator: string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="0b431de5-9b7f-4422-9560-e82bdb6df4f3" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="901.399701958374" y="326.236443967851" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <Symbol value="data: string[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="242bff70-47bd-44e8-8278-cc777a14ff74" start_index="0" end="0b431de5-9b7f-4422-9560-e82bdb6df4f3" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="615fe430-e663-4597-a82c-c4cc2a0c08e6" start_index="0" end="242bff70-47bd-44e8-8278-cc777a14ff74" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="22e17d4f-71b1-4550-84ed-7eb661d89e0b" start_index="0" end="242bff70-47bd-44e8-8278-cc777a14ff74" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="2b3b0cd2-fd8e-499d-a34e-3b17d3ba8003" start_index="0" end="242bff70-47bd-44e8-8278-cc777a14ff74" end_index="2" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

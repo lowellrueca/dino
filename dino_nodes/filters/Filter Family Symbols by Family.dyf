@@ -1,0 +1,44 @@
+<Workspace Version="1.3.4.6666" X="-462.972759223359" Y="-341.326574697593" zoom="1.24844365397223" ScaleFactor="1" Name="Filter Family Symbols by Family" Description="Filters family symbols by family" ID="81945417-ccf4-45bf-a70b-2dc7b5a04621" Category="Dino.Elements.Filter">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="a2ac8524-03c6-479b-8b19-59b2fb2c1f61" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="537.257626710694" y="497.19598244777" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="Element[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="cef0c5f3-0fd6-4158-83fd-57b3417ce5d9" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="554.372586455268" y="571.879443151364" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="Family" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="2033f191-9305-435a-8550-39f0a7b6122e" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="1032.21567902562" y="497.829220775743" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <Symbol value="Element[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+    <PythonNodeModels.PythonNode guid="69004688-333b-479f-a816-1f6e97184aa0" type="PythonNodeModels.PythonNode" nickname="Python Script" x="840.870212016647" y="518.80070832609" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" inputcount="2">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <Script>import clr
+import sys
+
+sys.path.append('C:/ProgramData/Dynamo/Dynamo Revit/1.3/definitions/dino/')
+
+from dino_core import filter_family_symbols_by_family
+
+#The inputs to this node will be stored as a list in the IN variables.
+family_symbols = UnwrapElement(IN[0])
+family = UnwrapElement(IN[1])
+
+#Assign your output to the OUT variable.
+OUT = filter_family_symbols_by_family(family_symbols, family)
+</Script>
+    </PythonNodeModels.PythonNode>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="a2ac8524-03c6-479b-8b19-59b2fb2c1f61" start_index="0" end="69004688-333b-479f-a816-1f6e97184aa0" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="cef0c5f3-0fd6-4158-83fd-57b3417ce5d9" start_index="0" end="69004688-333b-479f-a816-1f6e97184aa0" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="69004688-333b-479f-a816-1f6e97184aa0" start_index="0" end="2033f191-9305-435a-8550-39f0a7b6122e" end_index="0" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

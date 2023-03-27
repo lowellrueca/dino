@@ -1,0 +1,50 @@
+<Workspace Version="1.3.4.6666" X="-88.315845" Y="-185.57539" zoom="1.33823125" ScaleFactor="1" Name="Filter Elements by Family and Family Symbols" Description="Filters elements by family and family symbols" ID="77f06c6a-a680-4573-b77d-5ab9ef902b62" Category="Dino.Elements.Filter">
+  <NamespaceResolutionMap />
+  <Elements>
+    <PythonNodeModels.PythonNode guid="5879bbae-d583-4a99-b37e-d0b4d4a63819" type="PythonNodeModels.PythonNode" nickname="Python Script" x="438.039692317752" y="305.019763960825" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" inputcount="3">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <Script>import clr
+import sys
+
+sys.path.append('C:/ProgramData/Dynamo/Dynamo Revit/1.3/definitions/dino/')
+
+from dino_core import filter_elements_by_family_and_family_symbols
+
+#The inputs to this node will be stored as a list in the IN variables.
+elements = UnwrapElement(IN[0])
+family = UnwrapElement(IN[1])
+family_symbol = UnwrapElement(IN[2])
+
+#Assign your output to the OUT variable.
+OUT = filter_elements_by_family_and_family_symbols(elements, family, family_symbol)
+      </Script>
+    </PythonNodeModels.PythonNode>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="a0d196a4-6168-49e2-a62c-26d54b9f1fbc" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="263.713862981454" y="256.356162285106" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="Element[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="1d055be8-0ab1-462a-94b2-4d5b4265ab0e" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="289.313862981454" y="344.831154929314" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="Family" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="506dfbee-e5c3-4d40-bc9a-064fd43732c4" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="255.713862981454" y="430.317127551759" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="FamilyType" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="671db2dc-fe93-4bba-8dec-13ac107f6187" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="637.710621762868" y="343.635546920609" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <Symbol value="Element[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="5879bbae-d583-4a99-b37e-d0b4d4a63819" start_index="0" end="671db2dc-fe93-4bba-8dec-13ac107f6187" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="a0d196a4-6168-49e2-a62c-26d54b9f1fbc" start_index="0" end="5879bbae-d583-4a99-b37e-d0b4d4a63819" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="1d055be8-0ab1-462a-94b2-4d5b4265ab0e" start_index="0" end="5879bbae-d583-4a99-b37e-d0b4d4a63819" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="506dfbee-e5c3-4d40-bc9a-064fd43732c4" start_index="0" end="5879bbae-d583-4a99-b37e-d0b4d4a63819" end_index="2" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>
