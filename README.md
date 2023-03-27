@@ -9,7 +9,7 @@ To simplify workflow of common task that is collecting elements, sorting and fil
 ## Installation
 The library should be located at:
 
-    C:\ProgramData\Dynamo\Dynamo Revit\1.3\definitions\dino
+    C:\ProgramData\Dynamo\Dynamo Revit\1.3\definitions
 
 ---
 ## Modules
