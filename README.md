@@ -2,14 +2,22 @@
 Node library for Dynamo visual programming.
 
 ---
-## Goal
-To simplify workflow of common task that is collecting elements, sorting and filtering the elements.
+## Objective
+To simplify common workflow in Dynamo by
+* Retrieving the elements
+* Sorting the elements
+* Filtering the elements
+* Generating data
 
 ---
 ## Installation
-The library should be located at:
-
-    C:\ProgramData\Dynamo\Dynamo Revit\1.3\definitions
+Folder Structure
+```
+C:\ProgramData\Dynamo\Dynamo Revit\1.3\definitions\
+    | dino
+    |--- dino_core
+    |--- dino_nodes
+```
 
 ---
 ## Modules
@@ -38,4 +46,4 @@ The library should be located at:
         Contains nodes for collecting wall types.
 ---
 ## Limitations
-It works only for Revit 2019 with Dynamo 1.3 version.
+* Tested only for Revit 2019 with Dynamo 1.3 version.
