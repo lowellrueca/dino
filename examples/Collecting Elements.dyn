@@ -1,0 +1,131 @@
+<Workspace Version="1.3.4.6666" X="170.202217880662" Y="152.698715895048" zoom="0.331612581327351" ScaleFactor="1" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="False">
+  <NamespaceResolutionMap />
+  <Elements>
+    <DSRevitNodesUI.ElementsOfCategory guid="4911a123-e2f6-4dfb-8456-f17f5bfbc837" type="DSRevitNodesUI.ElementsOfCategory" nickname="All Elements of Category" x="392.032496373338" y="40.4856346248291" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsOfCategory>
+    <DSRevitNodesUI.Categories guid="73a9a308-a7bf-4a2a-b6a1-3753731e95bd" type="DSRevitNodesUI.Categories" nickname="Categories" x="112.432496373338" y="27.6856346248291" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="506:StructuralColumns" />
+    <DSRevitNodesUI.ElementsOfFamilyType guid="f0b684e5-8add-4852-807b-e94005eae00f" type="DSRevitNodesUI.ElementsOfFamilyType" nickname="All Elements of Family Type" x="738.298849532474" y="251.328842770603" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsOfFamilyType>
+    <DSRevitNodesUI.FamilyTypes guid="74722795-ea59-4425-ab18-df89df344798" type="DSRevitNodesUI.FamilyTypes" nickname="Family Types" x="106.009988939831" y="239.043437448207" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="49:HSC-01 - Steel Hollow Section Columns:HSC-01-SHS-15 - 80.0 x 80.0 x 6.3" />
+    <DSRevitNodesUI.ElementsAtLevel guid="e29bae84-3b2d-4a5b-892d-87f805761552" type="DSRevitNodesUI.ElementsAtLevel" nickname="All Elements at Level" x="320.595068571013" y="489.665706025083" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsAtLevel>
+    <DSRevitNodesUI.Levels guid="69be0a7e-4444-46c8-9456-d602a27e424d" type="DSRevitNodesUI.Levels" nickname="Levels" x="106.009988939831" y="473.285165595222" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="1:1ST STOREY" />
+    <DSRevitNodesUI.ElementsOfType guid="33aa3503-f834-4d33-a3c0-e82e28975095" type="DSRevitNodesUI.ElementsOfType" nickname="All Elements of Type" x="321.084900676397" y="808.105281031781" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsOfType>
+    <DSRevitNodesUI.ElementTypes guid="454d2580-f7de-4028-bef2-0fd90557be7f" type="DSRevitNodesUI.ElementTypes" nickname="Element Types" x="98.8349422475618" y="795.829107142434" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="121:FamilySymbol" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="9d267afd-7ffa-488a-8e0d-f284b9b7245d" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.ByName" x="550.862713824218" y="1118.7673457143" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.ByName@string">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="59b5a910-a8b7-4b0a-9f0a-6b37e5660943" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="109.353151144829" y="1009.00312243351" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="/*&#xA;	Below is an example of a family name&#xA;	that can be found in the project model.&#xA;*/&#xA;familyName = &quot;LBSC-01 - L-Bar Steel Column&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="d769bde3-6a33-4a8a-9fa9-a987c45a6057" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.Types" x="864.579995980055" y="1147.16564887377" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.Types">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="66b42ddb-dff7-4dd4-b747-581acf3d264b" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="FamilyInstance.ByFamilyType" x="1251.68394898313" y="1165.23478731965" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.FamilyInstance.ByFamilyType@Revit.Elements.FamilyType">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="03e12455-a257-4231-8a0e-cb240cb00ad9" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Get Families" x="2024.23519910413" y="163.885988400278" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <ID value="31de578f-10a1-401f-ad51-76c1a4cbfac1" />
+      <Name value="Get Families" />
+      <Description value="Retrieves the families by category" />
+      <Inputs>
+        <Input value="Category" />
+      </Inputs>
+      <Outputs>
+        <Output value="Family" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="f77de0fc-ab7a-411b-ae4d-5d7da13a7ff4" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Get Family Symbols" x="2024.23519910413" y="341.380614994498" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <ID value="3b905db2-3cdd-4642-8884-d44313f7e2fb" />
+      <Name value="Get Family Symbols" />
+      <Description value="Retrieves the family symbols by category" />
+      <Inputs>
+        <Input value="Category" />
+      </Inputs>
+      <Outputs>
+        <Output value="FamilyType" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="04ecd9d5-cacc-4a6d-9085-628972dfbfa4" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Get Elements" x="2024.23519910413" y="507.497380909602" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <ID value="fca415bf-7f88-4327-9999-f18de845694e" />
+      <Name value="Get Elements" />
+      <Description value="Retrieves the elements by category" />
+      <Inputs>
+        <Input value="Category" />
+      </Inputs>
+      <Outputs>
+        <Output value="Element" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <DSRevitNodesUI.Categories guid="407b258c-5a5c-4194-805a-ed253fefd8fa" type="DSRevitNodesUI.Categories" nickname="Categories" x="1710.65284439796" y="164.103006973399" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="506:StructuralColumns" />
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="73a9a308-a7bf-4a2a-b6a1-3753731e95bd" start_index="0" end="4911a123-e2f6-4dfb-8456-f17f5bfbc837" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="74722795-ea59-4425-ab18-df89df344798" start_index="0" end="f0b684e5-8add-4852-807b-e94005eae00f" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="69be0a7e-4444-46c8-9456-d602a27e424d" start_index="0" end="e29bae84-3b2d-4a5b-892d-87f805761552" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="454d2580-f7de-4028-bef2-0fd90557be7f" start_index="0" end="33aa3503-f834-4d33-a3c0-e82e28975095" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="9d267afd-7ffa-488a-8e0d-f284b9b7245d" start_index="0" end="d769bde3-6a33-4a8a-9fa9-a987c45a6057" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="59b5a910-a8b7-4b0a-9f0a-6b37e5660943" start_index="0" end="9d267afd-7ffa-488a-8e0d-f284b9b7245d" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="d769bde3-6a33-4a8a-9fa9-a987c45a6057" start_index="0" end="66b42ddb-dff7-4dd4-b747-581acf3d264b" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="407b258c-5a5c-4194-805a-ed253fefd8fa" start_index="0" end="03e12455-a257-4231-8a0e-cb240cb00ad9" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="407b258c-5a5c-4194-805a-ed253fefd8fa" start_index="0" end="f77de0fc-ab7a-411b-ae4d-5d7da13a7ff4" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="407b258c-5a5c-4194-805a-ed253fefd8fa" start_index="0" end="04ecd9d5-cacc-4a6d-9085-628972dfbfa4" end_index="0" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Graph.Notes.NoteModel guid="458af32e-0c21-487e-8d53-82f653b9318f" text="Collecting elements in various ways using the built in nodes" x="110.091767354236" y="-80.5972866390532" />
+    <Dynamo.Graph.Notes.NoteModel guid="b1e3994a-47d4-4894-9d6b-83e0bc2c11c5" text="Retrieving the family types of a family" x="865.014596725539" y="1107.68218350413" />
+    <Dynamo.Graph.Notes.NoteModel guid="c311ef80-1587-41d4-bbd5-d45b463c2236" text="Retrieving the Instances by Family Type" x="1252.71201789432" y="1127.33652126236" />
+    <Dynamo.Graph.Notes.NoteModel guid="3c29f8d9-abc7-4756-ae3e-195986217ad5" text="Collecting the Families by Category" x="2026.48067049708" y="109.709746422075" />
+    <Dynamo.Graph.Notes.NoteModel guid="d19dfe18-2a9f-499d-8d47-373701477875" text="Collecting the Family Types by Category" x="2029.71613194326" y="296.410927376964" />
+    <Dynamo.Graph.Notes.NoteModel guid="085ab903-7bd0-4f33-8639-6388aa560e91" text="Collecting Instances by Category" x="2036.70053796528" y="464.735112507782" />
+  </Notes>
+  <Annotations>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="877298d1-3ca2-4828-a0c4-14225ef55901" annotationText="Collecting Instances by Category" left="102.432496373338" top="-18.3143653751709" width="474" height="151.4" fontSize="30" InitialTop="27.6856346248291" InitialHeight="135.4" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="4911a123-e2f6-4dfb-8456-f17f5bfbc837" />
+      <Models ModelGuid="73a9a308-a7bf-4a2a-b6a1-3753731e95bd" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="35dff902-eed7-4232-b6e9-6c0883df2f28" annotationText="Collecting Instances by Family Type" left="96.009988939831" top="193.043437448207" width="843.488860592643" height="150.885405322396" fontSize="30" InitialTop="239.043437448207" InitialHeight="134.885405322396" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="f0b684e5-8add-4852-807b-e94005eae00f" />
+      <Models ModelGuid="74722795-ea59-4425-ab18-df89df344798" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="43fd6cb7-7b1a-49da-b01d-71b17ab864c5" annotationText="Collecting Elements by Level" left="96.009988939831" top="427.285165595222" width="385.785079631182" height="154.980540429861" fontSize="30" InitialTop="473.285165595222" InitialHeight="138.980540429861" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="e29bae84-3b2d-4a5b-892d-87f805761552" />
+      <Models ModelGuid="69be0a7e-4444-46c8-9456-d602a27e424d" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="23dcb775-48b4-4647-8a72-7b1f5e5b31d6" annotationText="Collecting Element Types:&#xD;&#xA;Element Types are objects under Revit API, e.g. Family, FamilySymbols, Elements etc." left="88.8349422475618" top="641.829107142434" width="442.249958428835" height="258.876173889347" fontSize="30" InitialTop="795.829107142434" InitialHeight="134.876173889347" TextblockHeight="144" backgrouund="#FFC1D676">
+      <Models ModelGuid="33aa3503-f834-4d33-a3c0-e82e28975095" />
+      <Models ModelGuid="454d2580-f7de-4028-bef2-0fd90557be7f" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="03ed01aa-1f29-436c-a747-e739a8090941" annotationText="Retrieving the family by name" left="99.353151144829" top="963.00312243351" width="653.509562679389" height="248.36422328079" fontSize="30" InitialTop="1009.00312243351" InitialHeight="232.364223280788" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="9d267afd-7ffa-488a-8e0d-f284b9b7245d" />
+      <Models ModelGuid="59b5a910-a8b7-4b0a-9f0a-6b37e5660943" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="accaa4f1-c61f-4d39-a4ff-4e59d685dca1" annotationText="Collecting various element types using Dino Module" left="1700.65284439796" top="27.709746422075" width="574.38235470617" height="572.387634487527" fontSize="30" InitialTop="109.709746422075" InitialHeight="520.387634487526" TextblockHeight="72" backgrouund="#FFB9F9E1">
+      <Models ModelGuid="03e12455-a257-4231-8a0e-cb240cb00ad9" />
+      <Models ModelGuid="f77de0fc-ab7a-411b-ae4d-5d7da13a7ff4" />
+      <Models ModelGuid="04ecd9d5-cacc-4a6d-9085-628972dfbfa4" />
+      <Models ModelGuid="407b258c-5a5c-4194-805a-ed253fefd8fa" />
+      <Models ModelGuid="3c29f8d9-abc7-4756-ae3e-195986217ad5" />
+      <Models ModelGuid="d19dfe18-2a9f-499d-8d47-373701477875" />
+      <Models ModelGuid="085ab903-7bd0-4f33-8639-6388aa560e91" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="e24c808b-ad2c-4260-b490-159a8f626a52" annotationText="Collecting Family Types thru a Single Family" left="854.579995980055" top="989.68218350413" width="252" height="250.08346536964" fontSize="30" InitialTop="1107.68218350413" InitialHeight="162.083465369638" TextblockHeight="108" backgrouund="#FFC1D676">
+      <Models ModelGuid="d769bde3-6a33-4a8a-9fa9-a987c45a6057" />
+      <Models ModelGuid="b1e3994a-47d4-4894-9d6b-83e0bc2c11c5" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="f7bdd84d-77c1-46ce-9426-0e2dd51fd7c5" annotationText="Collecting the Family Instances by Family Types" left="1241.68394898313" top="1009.33652126236" width="302.4" height="248.49826605729" fontSize="30" InitialTop="1127.33652126236" InitialHeight="160.498266057289" TextblockHeight="108" backgrouund="#FFC1D676">
+      <Models ModelGuid="66b42ddb-dff7-4dd4-b747-581acf3d264b" />
+      <Models ModelGuid="c311ef80-1587-41d4-bbd5-d45b463c2236" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+  </Annotations>
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

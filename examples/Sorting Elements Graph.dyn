@@ -1,0 +1,90 @@
+<Workspace Version="1.3.4.6666" X="-9.64647291049732" Y="201.587674576829" zoom="0.278026910573777" ScaleFactor="1" Name="Home" Description="" RunType="Automatic" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="92aa96da-0ea2-4d50-b0f4-448b4b8e95b1" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="257.180564831377" y="247.793412013058" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="/*&#xA;	Below is an example of a family name&#xA;	that can be found inside the project model&#xA;*/&#xA;&#xA;familyName = &quot;M_Single-Flush&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="26551d9e-24e6-42e5-a8a8-3e06775ded43" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.ByName" x="793.67337238145" y="247.793412013058" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.ByName@string">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="6cfe8154-f602-4d35-a5cc-eedf2dc96acb" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.Types" x="1105.97974372269" y="247.793412013058" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.Types">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="5009416e-8213-4ee5-accf-ea70b285a1ba" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Sort Elements by Parameter of Double" x="1957.70445577749" y="501.826667924218" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <ID value="be5a5222-c5d7-439a-8788-da5ba74ec8ac" />
+      <Name value="Sort Elements by Parameter of Double" />
+      <Description value="Sorts the elements by parameter of type double" />
+      <Inputs>
+        <Input value="Element[]" />
+        <Input value="parameter names: string[]" />
+      </Inputs>
+      <Outputs>
+        <Output value="Element" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="3df40af0-4c9a-41cd-89c4-9c5740bfaea6" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="1412.53767497431" y="590.283296210361" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="// Parameter names&#xA;&#xA;param1 = &quot;Width&quot;;&#xA;param2 = &quot;Height&quot;;&#xA;param3 = &quot;Thickness&quot;;&#xA;&#xA;/*&#xA;	Note:&#xA;		For Dynamo 1.3 below uses curly brackets,&#xA;		For Dyname 2.0 uses square brackets for&#xA;		creating list.&#xA;*/&#xA;// [param1, param2, param3];&#xA;{param1, param2, param3};" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="0e88813f-19d9-443e-959d-48a4408814ff" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Parameter.ParameterByName" x="2894.52255198888" y="272.562281156088" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Parameter.ParameterByName@Revit.Elements.Element,string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="03d52f1b-e5f9-464c-9229-e1f978af96cb" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Parameter.ParameterByName" x="2894.52255198888" y="582.606984419036" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Parameter.ParameterByName@Revit.Elements.Element,string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="afe49f03-95a4-40fe-9967-2845b519426a" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Parameter.ParameterByName" x="2894.52255198888" y="910.858613428383" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Parameter.ParameterByName@Revit.Elements.Element,string">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="6b31e8f1-40f5-414c-a9f2-1eb99c0b6067" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Parameter.Value" x="3255.49585834512" y="272.562281156088" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true" assembly="RevitNodes.dll" function="Revit.Elements.Parameter.Value">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="9d772937-d182-4736-b38b-17bebe09335d" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Parameter.Value" x="3255.49585834512" y="582.606984419036" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true" assembly="RevitNodes.dll" function="Revit.Elements.Parameter.Value">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="230064bb-0796-4465-8c19-2cbe61a73a80" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Parameter.Value" x="3255.49585834512" y="910.858613428383" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true" assembly="RevitNodes.dll" function="Revit.Elements.Parameter.Value">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="92aa96da-0ea2-4d50-b0f4-448b4b8e95b1" start_index="0" end="26551d9e-24e6-42e5-a8a8-3e06775ded43" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="26551d9e-24e6-42e5-a8a8-3e06775ded43" start_index="0" end="6cfe8154-f602-4d35-a5cc-eedf2dc96acb" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="6cfe8154-f602-4d35-a5cc-eedf2dc96acb" start_index="0" end="5009416e-8213-4ee5-accf-ea70b285a1ba" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="5009416e-8213-4ee5-accf-ea70b285a1ba" start_index="0" end="0e88813f-19d9-443e-959d-48a4408814ff" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="5009416e-8213-4ee5-accf-ea70b285a1ba" start_index="0" end="03d52f1b-e5f9-464c-9229-e1f978af96cb" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="5009416e-8213-4ee5-accf-ea70b285a1ba" start_index="0" end="afe49f03-95a4-40fe-9967-2845b519426a" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3df40af0-4c9a-41cd-89c4-9c5740bfaea6" start_index="0" end="0e88813f-19d9-443e-959d-48a4408814ff" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3df40af0-4c9a-41cd-89c4-9c5740bfaea6" start_index="1" end="03d52f1b-e5f9-464c-9229-e1f978af96cb" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3df40af0-4c9a-41cd-89c4-9c5740bfaea6" start_index="2" end="afe49f03-95a4-40fe-9967-2845b519426a" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3df40af0-4c9a-41cd-89c4-9c5740bfaea6" start_index="3" end="5009416e-8213-4ee5-accf-ea70b285a1ba" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="0e88813f-19d9-443e-959d-48a4408814ff" start_index="0" end="6b31e8f1-40f5-414c-a9f2-1eb99c0b6067" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="03d52f1b-e5f9-464c-9229-e1f978af96cb" start_index="0" end="9d772937-d182-4736-b38b-17bebe09335d" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="afe49f03-95a4-40fe-9967-2845b519426a" start_index="0" end="230064bb-0796-4465-8c19-2cbe61a73a80" end_index="0" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Graph.Notes.NoteModel guid="bc2f2cb3-bd41-4b57-921c-182a7fa0c23f" text="Note: The Element parameter of the node accepts a list of Family Symbols and Family Instances. And parameter names parameter of the node accepts up to 3 parameter names.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;For sorting with a single parameter.&#xD;&#xA;{param1}&#xD;&#xA;&#xD;&#xA;For sorting with 2 parameter names&#xD;&#xA;{param1, param2}&#xD;&#xA;&#xD;&#xA;For sorting with 3 parameter names&#xD;&#xA;{param1, param2, param3}" x="1959.95543823381" y="268.937910350579" />
+  </Notes>
+  <Annotations>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="b2b7c70a-843f-47a7-857d-93bbb2c7b26c" annotationText="Collecting the Family Types of a target Family" left="247.180564831377" top="201.793412013058" width="1100.79917889131" height="218.6" fontSize="30" InitialTop="247.793412013058" InitialHeight="204.036209037496" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="92aa96da-0ea2-4d50-b0f4-448b4b8e95b1" />
+      <Models ModelGuid="26551d9e-24e6-42e5-a8a8-3e06775ded43" />
+      <Models ModelGuid="6cfe8154-f602-4d35-a5cc-eedf2dc96acb" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="8b729639-6934-4e82-9a4f-29e6099814ed" annotationText="Sorting the elements by a given list of parameter names" left="1402.53767497431" top="222.937910350579" width="891.56678080318" height="679.945385859782" fontSize="30" InitialTop="268.937910350579" InitialHeight="596.510740384594" TextblockHeight="36" backgrouund="#FFFFAA45">
+      <Models ModelGuid="5009416e-8213-4ee5-accf-ea70b285a1ba" />
+      <Models ModelGuid="3df40af0-4c9a-41cd-89c4-9c5740bfaea6" />
+      <Models ModelGuid="bc2f2cb3-bd41-4b57-921c-182a7fa0c23f" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="144420ce-0733-4b0d-ac93-c9b2e95c9efd" annotationText="Checking the output of the parameter value of the sorted elements by param1, param2 and param3" left="2884.52255198888" top="154.562281156088" width="606.573306356246" height="874.496332272296" fontSize="30" InitialTop="272.562281156088" InitialHeight="786.496332272296" TextblockHeight="108" backgrouund="#FFA4E1FF">
+      <Models ModelGuid="0e88813f-19d9-443e-959d-48a4408814ff" />
+      <Models ModelGuid="03d52f1b-e5f9-464c-9229-e1f978af96cb" />
+      <Models ModelGuid="afe49f03-95a4-40fe-9967-2845b519426a" />
+      <Models ModelGuid="6b31e8f1-40f5-414c-a9f2-1eb99c0b6067" />
+      <Models ModelGuid="9d772937-d182-4736-b38b-17bebe09335d" />
+      <Models ModelGuid="230064bb-0796-4465-8c19-2cbe61a73a80" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+  </Annotations>
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

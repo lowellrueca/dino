@@ -1,0 +1,147 @@
+<Workspace Version="1.3.4.6666" X="404.928192086301" Y="172.16215310205" zoom="0.340142482597021" ScaleFactor="1" Name="Home" Description="" RunType="Automatic" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="53df70c1-b5d8-40cd-838d-ba93681cb4ad" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Filter Elements by Family and Family Symbols" x="361.397782119338" y="161.701284104952" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <ID value="77f06c6a-a680-4573-b77d-5ab9ef902b62" />
+      <Name value="Filter Elements by Family and Family Symbols" />
+      <Description value="Filters elements by family and family symbols" />
+      <Inputs>
+        <Input value="Element[]" />
+        <Input value="Family" />
+        <Input value="FamilyType" />
+      </Inputs>
+      <Outputs>
+        <Output value="Element" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <DSRevitNodesUI.ElementTypes guid="f65fd1c5-c121-40c5-9a6b-5596acb62ab8" type="DSRevitNodesUI.ElementTypes" nickname="Element Types" x="-273.802217880662" y="8.1012841049523" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="120:FamilyInstance" />
+    <DSRevitNodesUI.ElementsOfType guid="e5acb1cc-3734-4626-b2ab-a13c8fdf3721" type="DSRevitNodesUI.ElementsOfType" nickname="All Elements of Type" x="-58.6022178806619" y="34.5012841049524" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsOfType>
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="785c05bb-06ee-4a8a-92f1-d3cdcdd617e6" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.ByName" x="31.797782119338" y="198.501284104952" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.ByName@string">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="a649d9d8-9142-4123-a85d-b421bcb1f0ed" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-648" y="233.8" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="familyName = &quot;LBSC-01 - L-Bar Steel Column&quot;;&#xA;familyTypeName = &quot;LBSC-01-1 - 30.0 x 30.0 x 3.0 L-Bar Steel Column&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="7954ec3a-7a34-4b12-bda2-68d5a9e11fff" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="FamilyType.ByName" x="25.3977821193382" y="296.901284104952" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.FamilyType.ByName@string">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="bbdb50b2-051f-4058-9dc9-bc2f3cbf13cf" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Filter Elements by Category" x="-56.3366761649153" y="-296.94172234661" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <ID value="e809cb03-d5b2-49c1-8915-17787867be7d" />
+      <Name value="Filter Elements by Category" />
+      <Description value="Filter's the list of elements by category" />
+      <Inputs>
+        <Input value="Element[]" />
+        <Input value="Category" />
+      </Inputs>
+      <Outputs>
+        <Output value="Element" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <DSRevitNodesUI.ElementTypes guid="00e1ace3-2f85-4307-8e02-ecd326e4fffb" type="DSRevitNodesUI.ElementTypes" nickname="Element Types" x="-641.735678703743" y="-305.20308326231" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="120:FamilyInstance" />
+    <DSRevitNodesUI.ElementsOfType guid="a402e5c4-7823-4996-b85a-a75f7d45fbbf" type="DSRevitNodesUI.ElementsOfType" nickname="All Elements of Type" x="-389.831354902171" y="-315.109433074731" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsOfType>
+    <DSRevitNodesUI.Categories guid="2e3686fd-aa96-45f1-9005-8c1a8d8fd036" type="DSRevitNodesUI.Categories" nickname="Categories" x="-386.175082938279" y="-202.80574377858" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="506:StructuralColumns" />
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="036023e8-c854-4ea2-ab86-743e3f66ff78" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Filter Elements by Parameter Name" x="-185.944834048729" y="558.556969322329" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <ID value="74b85233-b591-4016-a97a-79313d065fa6" />
+      <Name value="Filter Elements by Parameter Name" />
+      <Description value="Filter's the list of element by parameter name" />
+      <Inputs>
+        <Input value="Element[]" />
+        <Input value="parameter name: string" />
+      </Inputs>
+      <Outputs>
+        <Output value="Element" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <DSRevitNodesUI.ElementsOfType guid="d21822f3-a6bf-4bd7-a61b-7251199838ba" type="DSRevitNodesUI.ElementsOfType" nickname="All Elements of Type" x="-458.747240399302" y="588.682821931874" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsOfType>
+    <DSRevitNodesUI.ElementTypes guid="17e99d8b-eb55-453d-a9e6-bf57fb7f4544" type="DSRevitNodesUI.ElementTypes" nickname="Element Types" x="-641.839444689958" y="591.046921404591" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="121:FamilySymbol" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="de3dbfc7-9a33-4f84-86f5-5e1ea5ffb0da" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-626.747240399302" y="712.640892746011" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="/*&#xA;	Below is an example of parameter name&#xA;	that can be found in the family&#xA;*/&#xA;&#xA;parameterName = &quot;x&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="d7d05c18-9019-4a76-9554-e20c9a6aaf1c" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Filter Family Symbols by Family" x="68.0811160398547" y="1022.63487755049" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <ID value="81945417-ccf4-45bf-a70b-2dc7b5a04621" />
+      <Name value="Filter Family Symbols by Family" />
+      <Description value="Filters family symbols by family" />
+      <Inputs>
+        <Input value="Element[]" />
+        <Input value="Family" />
+      </Inputs>
+      <Outputs>
+        <Output value="Element" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+    <DSRevitNodesUI.ElementsOfType guid="f1e7c3c8-1e12-4b1a-8659-065a3c28ab39" type="DSRevitNodesUI.ElementsOfType" nickname="All Elements of Type" x="-234.127639729076" y="989.967936903638" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+    </DSRevitNodesUI.ElementsOfType>
+    <DSRevitNodesUI.ElementTypes guid="2921f507-31e3-442e-b6e8-abc656f29046" type="DSRevitNodesUI.ElementTypes" nickname="Element Types" x="-433.161143852562" y="993.828556309488" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false" index="121:FamilySymbol" />
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="adef7684-2674-432a-8ee6-72e1922ea838" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-644.674299526413" y="1135.94737820486" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="/*&#xA;	Below is an example of a family name&#xA;	that can be found in the project model.&#xA;*/&#xA;&#xA;familyName = &quot;LBSC-01 - L-Bar Steel Column&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="6757c3ca-7926-41eb-a472-830dd03d54ae" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.ByName" x="-219.650207294768" y="1194.66789438116" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.ByName@string">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="f65fd1c5-c121-40c5-9a6b-5596acb62ab8" start_index="0" end="e5acb1cc-3734-4626-b2ab-a13c8fdf3721" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="e5acb1cc-3734-4626-b2ab-a13c8fdf3721" start_index="0" end="53df70c1-b5d8-40cd-838d-ba93681cb4ad" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="785c05bb-06ee-4a8a-92f1-d3cdcdd617e6" start_index="0" end="53df70c1-b5d8-40cd-838d-ba93681cb4ad" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="a649d9d8-9142-4123-a85d-b421bcb1f0ed" start_index="0" end="785c05bb-06ee-4a8a-92f1-d3cdcdd617e6" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="a649d9d8-9142-4123-a85d-b421bcb1f0ed" start_index="1" end="7954ec3a-7a34-4b12-bda2-68d5a9e11fff" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="7954ec3a-7a34-4b12-bda2-68d5a9e11fff" start_index="0" end="53df70c1-b5d8-40cd-838d-ba93681cb4ad" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="00e1ace3-2f85-4307-8e02-ecd326e4fffb" start_index="0" end="a402e5c4-7823-4996-b85a-a75f7d45fbbf" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="a402e5c4-7823-4996-b85a-a75f7d45fbbf" start_index="0" end="bbdb50b2-051f-4058-9dc9-bc2f3cbf13cf" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="2e3686fd-aa96-45f1-9005-8c1a8d8fd036" start_index="0" end="bbdb50b2-051f-4058-9dc9-bc2f3cbf13cf" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="d21822f3-a6bf-4bd7-a61b-7251199838ba" start_index="0" end="036023e8-c854-4ea2-ab86-743e3f66ff78" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="17e99d8b-eb55-453d-a9e6-bf57fb7f4544" start_index="0" end="d21822f3-a6bf-4bd7-a61b-7251199838ba" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="de3dbfc7-9a33-4f84-86f5-5e1ea5ffb0da" start_index="0" end="036023e8-c854-4ea2-ab86-743e3f66ff78" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="f1e7c3c8-1e12-4b1a-8659-065a3c28ab39" start_index="0" end="d7d05c18-9019-4a76-9554-e20c9a6aaf1c" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="2921f507-31e3-442e-b6e8-abc656f29046" start_index="0" end="f1e7c3c8-1e12-4b1a-8659-065a3c28ab39" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="adef7684-2674-432a-8ee6-72e1922ea838" start_index="0" end="6757c3ca-7926-41eb-a472-830dd03d54ae" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="6757c3ca-7926-41eb-a472-830dd03d54ae" start_index="0" end="d7d05c18-9019-4a76-9554-e20c9a6aaf1c" end_index="1" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Graph.Notes.NoteModel guid="4e4938b9-0132-4350-b839-84c87105925c" text="Element is a node's parameter that accepts list of Family Symbol, Family Instances and other elements where is applicable" x="-186.519764278345" y="482.720132639666" />
+  </Notes>
+  <Annotations>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="949a3bff-d309-409d-8995-f92f43dae8f4" annotationText="Filtering Family Instances by Family and Family Type" left="-658" top="-37.8987158950477" width="1323.79778211934" height="427.4" fontSize="30" InitialTop="8.1012841049523" InitialHeight="411.4" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="53df70c1-b5d8-40cd-838d-ba93681cb4ad" />
+      <Models ModelGuid="f65fd1c5-c121-40c5-9a6b-5596acb62ab8" />
+      <Models ModelGuid="e5acb1cc-3734-4626-b2ab-a13c8fdf3721" />
+      <Models ModelGuid="785c05bb-06ee-4a8a-92f1-d3cdcdd617e6" />
+      <Models ModelGuid="a649d9d8-9142-4123-a85d-b421bcb1f0ed" />
+      <Models ModelGuid="7954ec3a-7a34-4b12-bda2-68d5a9e11fff" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="7c144eac-0e30-4173-80cd-26793ecb7f48" annotationText="Filtering Family Instances by Category" left="-651.735678703743" top="-361.109433074731" width="831.799002538828" height="250.903689296151" fontSize="30" InitialTop="-315.109433074731" InitialHeight="234.903689296151" TextblockHeight="36" backgrouund="#FFD4B6DB">
+      <Models ModelGuid="bbdb50b2-051f-4058-9dc9-bc2f3cbf13cf" />
+      <Models ModelGuid="00e1ace3-2f85-4307-8e02-ecd326e4fffb" />
+      <Models ModelGuid="a402e5c4-7823-4996-b85a-a75f7d45fbbf" />
+      <Models ModelGuid="2e3686fd-aa96-45f1-9005-8c1a8d8fd036" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="a7f5aabe-2319-4edc-8c25-61626f0b0356" annotationText="Filters the elements by parameter name associated with it" left="-651.839444689958" top="436.720132639666" width="787.894610641229" height="448.520760106345" fontSize="30" InitialTop="482.720132639666" InitialHeight="326.452050164544" TextblockHeight="36" backgrouund="#FFFFB8D8">
+      <Models ModelGuid="036023e8-c854-4ea2-ab86-743e3f66ff78" />
+      <Models ModelGuid="d21822f3-a6bf-4bd7-a61b-7251199838ba" />
+      <Models ModelGuid="17e99d8b-eb55-453d-a9e6-bf57fb7f4544" />
+      <Models ModelGuid="de3dbfc7-9a33-4f84-86f5-5e1ea5ffb0da" />
+      <Models ModelGuid="4e4938b9-0132-4350-b839-84c87105925c" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="71e04e2c-9eff-4647-a96e-71fa9d500345" annotationText="Filters the Family Symbols by Family" left="-654.674299526413" top="943.967936903638" width="959.155415566267" height="364.579441301225" fontSize="30" InitialTop="989.967936903638" InitialHeight="348.579441301225" TextblockHeight="36" backgrouund="#FFFFC999">
+      <Models ModelGuid="d7d05c18-9019-4a76-9554-e20c9a6aaf1c" />
+      <Models ModelGuid="f1e7c3c8-1e12-4b1a-8659-065a3c28ab39" />
+      <Models ModelGuid="2921f507-31e3-442e-b6e8-abc656f29046" />
+      <Models ModelGuid="adef7684-2674-432a-8ee6-72e1922ea838" />
+      <Models ModelGuid="6757c3ca-7926-41eb-a472-830dd03d54ae" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+  </Annotations>
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>
