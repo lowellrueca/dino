@@ -1,0 +1,62 @@
+<Workspace Version="1.3.4.6666" X="65.5226553376539" Y="-168.519678903169" zoom="0.687756255177416" ScaleFactor="1" Name="Home" Description="" RunType="Manual" RunPeriod="1000" HasRunWithoutCrash="True">
+  <NamespaceResolutionMap />
+  <Elements>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="3a7982b4-0d08-4ff9-89b8-98e92749185d" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="1093.47209471846" y="647.407930123405" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="&quot;b&quot;;&#xA;&quot;Ht&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="00aec0f8-ddc5-4890-b065-74108d172b3f" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.ByName" x="381.416663798417" y="562.347431333268" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.ByName@string">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <Dynamo.Graph.Nodes.CodeBlockNodeModel guid="74bcee3d-45c1-487d-8c7d-e2cc3dd8dd2d" type="Dynamo.Graph.Nodes.CodeBlockNodeModel" nickname="Code Block" x="-4.36831987035475" y="562.347431333268" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" CodeText="&quot;HSC-01 - Steel Hollow Section Columns&quot;;" ShouldFocus="false" />
+    <Dynamo.Graph.Nodes.ZeroTouch.DSFunction guid="96870ec4-8651-4835-8e4f-64a9e308b6db" type="Dynamo.Graph.Nodes.ZeroTouch.DSFunction" nickname="Family.Types" x="650.223683135148" y="562.347431333268" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="false" assembly="RevitNodes.dll" function="Revit.Elements.Family.Types">
+      <PortInfo index="0" default="False" />
+    </Dynamo.Graph.Nodes.ZeroTouch.DSFunction>
+    <CoreNodeModels.Input.BoolSelector guid="7ac93be1-568e-4399-9856-e2e06ad1790d" type="CoreNodeModels.Input.BoolSelector" nickname="Boolean" x="1076.98973664574" y="822.265275960474" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <System.Boolean>True</System.Boolean>
+    </CoreNodeModels.Input.BoolSelector>
+    <Dynamo.Graph.Nodes.CustomNodes.Function guid="e383f439-81e5-47f8-8a78-461fcc7fced6" type="Dynamo.Graph.Nodes.CustomNodes.Function" nickname="Filter Elements by Parameter Equality" x="1411.66875043005" y="585.191926729938" isVisible="true" isUpstreamVisible="true" lacing="Shortest" isSelectedInput="False" IsFrozen="false" isPinned="true">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <PortInfo index="3" default="False" />
+      <ID value="866df3ed-4e1b-4946-80d0-0e8d4ca3fde7" />
+      <Name value="Filter Elements by Parameter Equality" />
+      <Description value="Filters the elements by equality of two parameter values" />
+      <Inputs>
+        <Input value="Element[]" />
+        <Input value="parameterName1" />
+        <Input value="parameterName2" />
+        <Input value="isEqual" />
+      </Inputs>
+      <Outputs>
+        <Output value="Element" />
+      </Outputs>
+    </Dynamo.Graph.Nodes.CustomNodes.Function>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="3a7982b4-0d08-4ff9-89b8-98e92749185d" start_index="0" end="e383f439-81e5-47f8-8a78-461fcc7fced6" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3a7982b4-0d08-4ff9-89b8-98e92749185d" start_index="1" end="e383f439-81e5-47f8-8a78-461fcc7fced6" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="00aec0f8-ddc5-4890-b065-74108d172b3f" start_index="0" end="96870ec4-8651-4835-8e4f-64a9e308b6db" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="74bcee3d-45c1-487d-8c7d-e2cc3dd8dd2d" start_index="0" end="00aec0f8-ddc5-4890-b065-74108d172b3f" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="96870ec4-8651-4835-8e4f-64a9e308b6db" start_index="0" end="e383f439-81e5-47f8-8a78-461fcc7fced6" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="7ac93be1-568e-4399-9856-e2e06ad1790d" start_index="0" end="e383f439-81e5-47f8-8a78-461fcc7fced6" end_index="3" portType="0" />
+  </Connectors>
+  <Notes>
+    <Dynamo.Graph.Notes.NoteModel guid="68e2c44a-dd09-47e7-96ff-dc322c135dc3" text="Please try to change to see the result" x="1080.30947621924" y="784.82408556375" />
+  </Notes>
+  <Annotations>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="db29eadd-d4a3-4922-b1e5-1fc74a0cc2c9" annotationText="Retrieving the family types from the family" left="-14.3683198703548" top="516.347431333268" width="906.592003005503" height="138.6" fontSize="30" InitialTop="562.347431333268" InitialHeight="122.6" TextblockHeight="36" backgrouund="#FFC1D676">
+      <Models ModelGuid="00aec0f8-ddc5-4890-b065-74108d172b3f" />
+      <Models ModelGuid="74bcee3d-45c1-487d-8c7d-e2cc3dd8dd2d" />
+      <Models ModelGuid="96870ec4-8651-4835-8e4f-64a9e308b6db" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+    <Dynamo.Graph.Annotations.AnnotationModel guid="09ef0688-b9ef-4680-80a0-d1a2b2b44376" annotationText="Filtering the Family Types based on 2 given paramater values" left="1066.98973664574" top="503.191926729938" width="630.67901378431" height="386.873349230536" fontSize="30" InitialTop="585.191926729938" InitialHeight="334.873349230536" TextblockHeight="72" backgrouund="#FFC1D676">
+      <Models ModelGuid="3a7982b4-0d08-4ff9-89b8-98e92749185d" />
+      <Models ModelGuid="7ac93be1-568e-4399-9856-e2e06ad1790d" />
+      <Models ModelGuid="e383f439-81e5-47f8-8a78-461fcc7fced6" />
+      <Models ModelGuid="68e2c44a-dd09-47e7-96ff-dc322c135dc3" />
+    </Dynamo.Graph.Annotations.AnnotationModel>
+  </Annotations>
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>
