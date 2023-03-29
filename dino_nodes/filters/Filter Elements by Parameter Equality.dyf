@@ -1,0 +1,56 @@
+<Workspace Version="1.3.4.6666" X="-196.209155462465" Y="-178.973596561649" zoom="1.27771698410772" ScaleFactor="1" Name="Filter Elements by Parameter Equality" Description="Filters the elements by equality of two parameter values" ID="866df3ed-4e1b-4946-80d0-0e8d4ca3fde7" Category="Dino.Elements.Filter">
+  <NamespaceResolutionMap />
+  <Elements>
+    <PythonNodeModels.PythonNode guid="391b2509-40e5-4264-825e-a5d4c0cc0dfc" type="PythonNodeModels.PythonNode" nickname="Python Script" x="588.8" y="351.2" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false" inputcount="4">
+      <PortInfo index="0" default="False" />
+      <PortInfo index="1" default="False" />
+      <PortInfo index="2" default="False" />
+      <PortInfo index="3" default="False" />
+      <Script>import clr
+import sys
+
+sys.path.append('C:/ProgramData/Dynamo/Dynamo Revit/1.3/definitions/dino')
+
+from dino_core import filter_elements_by_parameter_equality
+
+#The inputs to this node will be stored as a list in the IN variables.
+elems = UnwrapElement(IN[0])
+param_name1 = IN[1]
+param_name2 = IN[2]
+is_equal = IN[3]
+
+#Assign your output to the OUT variable.
+OUT = filter_elements_by_parameter_equality(elems, param_name1, param_name2, is_equal)
+      </Script>
+    </PythonNodeModels.PythonNode>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="4c67bdc9-3367-43c9-b12d-d2623c1115fb" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="387.492901895327" y="206.84373984222" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="Element[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="3f172c78-64c9-4045-a405-d90207fc9a2c" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="280.292901895327" y="300.847234615013" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="parameterName1: string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="0e20fefa-288f-4723-9d75-5563a32e6181" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="280.292901895327" y="412.381998267074" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="parameterName2: string" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Symbol guid="11bf7a7f-1b84-4a39-a079-c1cc134c90b4" type="Dynamo.Graph.Nodes.CustomNodes.Symbol" nickname="Input" x="355.492901895327" y="541.448030798403" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="True" IsFrozen="false" isPinned="false">
+      <Symbol value="isEqual: bool" />
+    </Dynamo.Graph.Nodes.CustomNodes.Symbol>
+    <Dynamo.Graph.Nodes.CustomNodes.Output guid="5c253b7a-7cc9-4900-886e-4460c8bc16fe" type="Dynamo.Graph.Nodes.CustomNodes.Output" nickname="Output" x="764.115464066466" y="357.737866085785" isVisible="true" isUpstreamVisible="true" lacing="Disabled" isSelectedInput="False" IsFrozen="false" isPinned="false">
+      <PortInfo index="0" default="False" />
+      <Symbol value="Element[]" />
+    </Dynamo.Graph.Nodes.CustomNodes.Output>
+  </Elements>
+  <Connectors>
+    <Dynamo.Graph.Connectors.ConnectorModel start="391b2509-40e5-4264-825e-a5d4c0cc0dfc" start_index="0" end="5c253b7a-7cc9-4900-886e-4460c8bc16fe" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="4c67bdc9-3367-43c9-b12d-d2623c1115fb" start_index="0" end="391b2509-40e5-4264-825e-a5d4c0cc0dfc" end_index="0" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="3f172c78-64c9-4045-a405-d90207fc9a2c" start_index="0" end="391b2509-40e5-4264-825e-a5d4c0cc0dfc" end_index="1" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="0e20fefa-288f-4723-9d75-5563a32e6181" start_index="0" end="391b2509-40e5-4264-825e-a5d4c0cc0dfc" end_index="2" portType="0" />
+    <Dynamo.Graph.Connectors.ConnectorModel start="11bf7a7f-1b84-4a39-a079-c1cc134c90b4" start_index="0" end="391b2509-40e5-4264-825e-a5d4c0cc0dfc" end_index="3" portType="0" />
+  </Connectors>
+  <Notes />
+  <Annotations />
+  <Presets />
+  <Cameras>
+    <Camera Name="Background Preview" eyeX="-17" eyeY="24" eyeZ="50" lookX="12" lookY="-13" lookZ="-58" upX="0" upY="1" upZ="0" />
+  </Cameras>
+</Workspace>

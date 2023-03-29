@@ -4,7 +4,9 @@ import sys
 sys.path.append('C:/Program Files/Dynamo/Dynamo Revit/1.3/Revit_2019')
 
 clr.AddReference('RevitNodes')
+clr.AddReference('RevitAPI')
 
+from Autodesk.Revit.DB import StorageType
 from Revit.Elements import ElementWrapper, Parameter
 
 def filter_by_category(elements, category):
@@ -50,3 +52,55 @@ def filter_elements_by_family_and_family_symbols(
                     e.Symbol.Family.Id.Equals(family.Id) and \
                     e.Symbol.Id.Equals(family_symbol.Id), \
                     elements)
+
+def compare_equality(param1, param2):
+	is_equal = False
+	
+	if param1.StorageType.Equals(StorageType.Double) and \
+	   param2.StorageType.Equals(StorageType.Double):
+	   
+		is_equal = param1.AsDouble() == (param2.AsDouble())
+		
+	if param1.StorageType.Equals(StorageType.Integer) and \
+	   param2.StorageType.Equals(StorageType.Integer):
+	   
+		is_equal = param1.AsInteger() == (param2.AsInteger())
+	
+	if param1.StorageType.Equals(StorageType.String) and \
+	   param2.StorageType.Equals(StorageType.String):
+	   
+		is_equal = param1.AsString() == (param2.AsString())
+	
+	return is_equal
+	
+
+def compare_inequality(param1, param2):
+	is_equal = False
+	
+	if param1.StorageType.Equals(StorageType.Double) and \
+	   param2.StorageType.Equals(StorageType.Double):
+	   
+		is_equal = param1.AsDouble() != param2.AsDouble()
+		
+	if param1.StorageType.Equals(StorageType.Integer) and \
+	   param2.StorageType.Equals(StorageType.Integer):
+	   
+		is_equal = param1.AsInteger() != (param2.AsInteger())
+	
+	if param1.StorageType.Equals(StorageType.String) and \
+	   param2.StorageType.Equals(StorageType.String):
+	   
+		is_equal = param1.AsString() != (param2.AsString())
+	
+	return is_equal
+
+def filter_elements_by_parameter_equality(elements, param1, param2, is_equal):
+	elems = []
+	
+	if is_equal:
+		elems = filter(lambda e: compare_equality(e.LookupParameter(param1), e.LookupParameter(param2)), elements)
+	
+	if not is_equal:
+		elems = filter(lambda e: compare_inequality(e.LookupParameter(param1), e.LookupParameter(param2)), elements)
+		
+	return elems

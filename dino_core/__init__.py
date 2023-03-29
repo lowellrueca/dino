@@ -12,7 +12,8 @@ from filters import (
     filter_by_category,
     filter_by_parameter_name,
     filter_family_symbols_by_family,
-    filter_elements_by_family_and_family_symbols
+    filter_elements_by_family_and_family_symbols,
+    filter_elements_by_parameter_equality,
 )
 
 from sort import (
@@ -39,6 +40,7 @@ __all__ = [
     "filter_by_parameter_name",
     "filter_family_symbols_by_family",
     "filter_elements_by_family_and_family_symbols",
+    "filter_elements_by_parameter_equality",
     'sort_elements_by_param_of_int',
     'sort_elements_by_param_of_double',
     'sort_elements_by_param_of_string',
