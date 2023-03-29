@@ -54,53 +54,73 @@ def filter_elements_by_family_and_family_symbols(
                     elements)
 
 def compare_equality(param1, param2):
-	is_equal = False
-	
-	if param1.StorageType.Equals(StorageType.Double) and \
-	   param2.StorageType.Equals(StorageType.Double):
-	   
-		is_equal = param1.AsDouble() == (param2.AsDouble())
-		
-	if param1.StorageType.Equals(StorageType.Integer) and \
-	   param2.StorageType.Equals(StorageType.Integer):
-	   
-		is_equal = param1.AsInteger() == (param2.AsInteger())
-	
-	if param1.StorageType.Equals(StorageType.String) and \
-	   param2.StorageType.Equals(StorageType.String):
-	   
-		is_equal = param1.AsString() == (param2.AsString())
-	
-	return is_equal
-	
+   """
+   Used to compare two parameter values for their equality
+   :param param1: The first parameter
+   :param param2: The second parameter to compare to
+   :returns: Result of true or false
+   """
+   is_equal = False
+
+   if param1.StorageType.Equals(StorageType.Double) and \
+      param2.StorageType.Equals(StorageType.Double):
+      
+      is_equal = param1.AsDouble() == (param2.AsDouble())
+      
+   if param1.StorageType.Equals(StorageType.Integer) and \
+      param2.StorageType.Equals(StorageType.Integer):
+      
+      is_equal = param1.AsInteger() == (param2.AsInteger())
+
+   if param1.StorageType.Equals(StorageType.String) and \
+      param2.StorageType.Equals(StorageType.String):
+      
+      is_equal = param1.AsString() == (param2.AsString())
+
+   return is_equal
 
 def compare_inequality(param1, param2):
-	is_equal = False
-	
-	if param1.StorageType.Equals(StorageType.Double) and \
-	   param2.StorageType.Equals(StorageType.Double):
-	   
-		is_equal = param1.AsDouble() != param2.AsDouble()
-		
-	if param1.StorageType.Equals(StorageType.Integer) and \
-	   param2.StorageType.Equals(StorageType.Integer):
-	   
-		is_equal = param1.AsInteger() != (param2.AsInteger())
-	
-	if param1.StorageType.Equals(StorageType.String) and \
-	   param2.StorageType.Equals(StorageType.String):
-	   
-		is_equal = param1.AsString() != (param2.AsString())
-	
-	return is_equal
+   """
+   Used to compare two parameter values for their inequality
+   :param param1: The first parameter
+   :param param2: The second parameter to compare to
+   :returns: Result of true or false
+   """
+   is_equal = False
+
+   if param1.StorageType.Equals(StorageType.Double) and \
+      param2.StorageType.Equals(StorageType.Double):
+      
+      is_equal = param1.AsDouble() != param2.AsDouble()
+      
+   if param1.StorageType.Equals(StorageType.Integer) and \
+      param2.StorageType.Equals(StorageType.Integer):
+      
+      is_equal = param1.AsInteger() != (param2.AsInteger())
+
+   if param1.StorageType.Equals(StorageType.String) and \
+      param2.StorageType.Equals(StorageType.String):
+      
+      is_equal = param1.AsString() != (param2.AsString())
+
+   return is_equal
 
 def filter_elements_by_parameter_equality(elements, param1, param2, is_equal):
-	elems = []
-	
-	if is_equal:
-		elems = filter(lambda e: compare_equality(e.LookupParameter(param1), e.LookupParameter(param2)), elements)
-	
-	if not is_equal:
-		elems = filter(lambda e: compare_inequality(e.LookupParameter(param1), e.LookupParameter(param2)), elements)
-		
-	return elems
+   """
+   For filtering the elements by comparing two parameter values equality
+   :param elements: The list of elements
+   :param param1: The first parameter name
+   :param param2: The second parameter name to compare to
+   :param is_equal: A boolean parameter for filtering the elements,
+                    True returns the list of filtered elements based on true
+                    results and False is the inversed filtered elements list
+   """
+   elems = []
+
+   if is_equal:
+      elems = filter(lambda e: compare_equality(e.LookupParameter(param1), e.LookupParameter(param2)), elements)
+
+   if not is_equal:
+      elems = filter(lambda e: compare_inequality(e.LookupParameter(param1), e.LookupParameter(param2)), elements)
+      
+   return elems
