@@ -3,7 +3,7 @@ Node library for Dynamo visual programming.
 
 ---
 ## Objective
-To simplify common workflow in Dynamo by
+To simplify common workflow in Dynamo namely
 * Retrieving the elements
 * Sorting the elements
 * Filtering the elements
