@@ -66,7 +66,7 @@ def join_data(data1, data2, separator):
     :returns: The list of joined data
     """
     return map(lambda d1, d2: \
-            "{0}{2}{1}".format(d1, d2, separator), data1, data2)
+            "{0}{2}{1}".format(d1.ToString(), d2.ToString(), separator), data1, data2)
 
 @padding
 def numerize(data):
